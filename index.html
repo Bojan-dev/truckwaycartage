@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truckway Cartage</title>
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="flex flex--row-spacebetween">
+        <img class="logo" src="imgs/logo.png" alt="Company Logo" />
+        <div class="flex flex--column-center">
+          <p class="nav--text">Talk to recruiter</p>
+          <a
+            href="tel:8889993851"
+            class="nav--text text--underline text--regular"
+            >888 999 3851</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container flex flex--column-center">
+        <h1 class="text--center h1--desktop">
+          WE SUPPORT
+          <span class="text--underline underline--thicker h1--span"></span>
+        </h1>
+        <h1 class="text--center h1--responsive">
+          <span class="h1--small">WE SUPPORT</span>
+          <span class="text--underline underline--thicker h1--span"></span>
+        </h1>
+        <p class="text--center">
+          As family-run business understands importance of family same as
+          importance of providing enough for all family needs. <br />
+          That’s why we spent 20+ years of building strongest relationships with
+          mayor local drivers to ensure
+          <span class="text--red">high paid wages</span> and
+          <span class="text--red">family-friendly schedule</span>.
+        </p>
+        <img
+          class="main--img"
+          src="imgs/hero-illustration.svg"
+          alt="Dump truck illustration"
+        />
+        <a href="#why-us-section"
+          ><img src="imgs/arrow-down.svg" alt="Arrow down" />
+        </a>
+      </div>
+    </main>
+    <section
+      id="why-us-section"
+      aria-labelledby="why-us-title"
+      class="bkg--red"
+    >
+      <div class="container flex flex--column-center">
+        <h2 id="why-us-title" class="text--white text--center">
+          Why truckaway?
+        </h2>
+        <div class="heading--underline bkg--white"></div>
+        <div class="flex flex--row-spacebetween width--100 why-us--gap">
+          <div class="flex flex--column-center flex--row-equal-width">
+            <div class="bkg--white img--wrapper flex flex--center">
+              <img
+                id="why-us--first-ill"
+                src="imgs/why-us-first-ill.svg"
+                alt="Three workers standing in front of a hand that's holding dollar signs "
+              />
+            </div>
+            <h3 class="text--white text--center">High Wages</h3>
+            <div class="heading--underline bkg--white h3--underline"></div>
+            <p class="text--center text--white">
+              Our drivers are bringing home $30+ per hour at work
+            </p>
+          </div>
+          <div class="flex flex--column-center flex--row-equal-width">
+            <div class="bkg--white img--wrapper flex flex--center">
+              <img
+                src="imgs/why-us-second-ill.svg"
+                alt="A worker standing in front of a calendar looking at its own schedule"
+              />
+            </div>
+            <h3 class="text--white text--center">Family-Friendly Schedule</h3>
+            <div class="heading--underline bkg--white h3--underline"></div>
+            <p class="text--center text--white">
+              You will be home before your kids from school
+            </p>
+          </div>
+          <div class="flex flex--column-center flex--row-equal-width">
+            <div class="bkg--white img--wrapper flex flex--center">
+              <img
+                src="imgs/why-us-third-ill.svg"
+                alt="A dump truck on a road to its goal location "
+              />
+            </div>
+            <h3 class="text--white text--center">Free Training</h3>
+            <div class="heading--underline bkg--white h3--underline"></div>
+            <p class="text--center text--white">
+              We provide free training for all our drivers
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="apply-today-title">
+      <div class="container flex flex--column-center">
+        <h2 id="apply-today-title">Apply today!</h2>
+        <div class="heading--underline bkg--red"></div>
+      </div>
+      <div
+        class="container flex flex--row-spacearound"
+        id="apply-today--container"
+      >
+        <div class="flex--row-equal-width">
+          <h3>Apply today by filling out this form:</h3>
+          <div class="apply-today--form-steps"></div>
+          <form class="apply-today--form flex flex--column-start">
+            <div>
+              <label for="choose-age">Are you at least 25 years of age?</label>
+              <select id="choose-age" type="text">
+                <option disabled selected value="">
+                  Please, select an option bellow
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div>
+              <label for="choose-cdl">Do you have CDL licence?</label>
+              <select id="choose-cdl" type="text">
+                <option disabled selected value="">
+                  Please, select an option bellow
+                </option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div>
+              <label for="choose-experience">Years of experiance:</label>
+              <select id="choose-experience" type="text">
+                <option disabled selected value="">
+                  Please, select an option bellow
+                </option>
+                <option value="">&lt;5 years</option>
+                <option value="No">5-10 years</option>
+                <option value="No">10-15 years</option>
+                <option value="No">15-20 years</option>
+                <option value="No">&gt;20 years</option>
+              </select>
+            </div>
+            <button class="bkg--red apply-today--btn btn--anim" type="submit">
+              NEXT
+            </button>
+          </form>
+        </div>
+        <div class="apply-today--separation-line"></div>
+        <div class="flex--row-equal-width">
+          <h3>Minimum qualifications and requirements:</h3>
+          <ul class="apply-today--requirements">
+            <li>At least 25 years of age</li>
+            <li>
+              Have a comercial driver license - CDL class A with clean driving
+              records
+            </li>
+            <li>Experience in driving manual</li>
+          </ul>
+          <p>
+            Candidates may be subjects to a background check and drug screen, in
+            accordance with applicable law.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container flex flex--row-spacebetween">
+        <a href="#"
+          ><img src="imgs/logo.png" class="logo" alt="Company Logo"
+        /></a>
+        <div class="flex flex--column-center footer--icon-wrapper">
+          <a href="tel:8889993851"
+            ><img src="imgs/phone-icon.svg" alt="Phone icon"
+          /></a>
+          <a class="text--white text--underline-none" href="tel:8889993851"
+            >888 999 3851</a
+          >
+        </div>
+        <div class="flex flex--column-center footer--icon-wrapper">
+          <a
+            href="https://www.google.com/maps/search/80+Gilberts,+Elgin+IL+60206/@42.1040902,-88.3876678,14z/data=!3m1!4b1"
+            target="_blank"
+          >
+            <img src="imgs/location-icon.svg" alt="Location icon"
+          /></a>
+          <a
+            href="https://www.google.com/maps/search/80+Gilberts,+Elgin+IL+60206/@42.1040902,-88.3876678,14z/data=!3m1!4b1"
+            class="text--white text--underline-none"
+            target="_blank"
+            >80 Gilberts, Elgin IL 60206</a
+          >
+        </div>
+        <div class="flex flex--column-center footer--icon-wrapper">
+          <a href="mailto:guerro@truckaway.com">
+            <img src="imgs/email-icon.svg" alt="Email icon"
+          /></a>
+          <a
+            href="mailto:guerro@truckaway.com"
+            class="text--white text--underline-none"
+            >guerro@truckaway.com</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
