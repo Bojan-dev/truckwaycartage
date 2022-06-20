@@ -192,8 +192,59 @@ backArrow.addEventListener('click', (e) => {
   }
 });
 
-secondForm.addEventListener('touchstart', (e) => console.log('sss'));
-
 function closeModalHandler() {
   location.reload();
 }
+
+const calculateCoordsDiff = (start, end) => {
+  return end - start;
+};
+
+//FIRST FORM TOUCH EVENTS
+
+const touchCoordsFirstForm = {
+  startingCoord: 0,
+  endingCoord: 0,
+};
+
+firstForm.addEventListener('touchstart', (e) => {
+  touchCoordsFirstForm.startingCoord = e.changedTouches[0].clientX;
+});
+
+firstForm.addEventListener('touchend', (e) => {
+  touchCoordsFirstForm.endingCoord = e.changedTouches[0].clientX;
+
+  const coordsDifference = calculateCoordsDiff(
+    touchCoordsFirstForm.startingCoord,
+    touchCoordsFirstForm.endingCoord
+  );
+
+  if (-coordsDifference > firstForm.clientWidth / 2)
+    firstForm.dispatchEvent(new Event('submit'));
+});
+
+//SECOND FORM TOUCH EVENTS
+
+const touchCoordsSecondForm = {
+  startingCoord: 0,
+  endingCoord: 0,
+};
+
+secondForm.addEventListener('touchstart', (e) => {
+  touchCoordsSecondForm.startingCoord = e.changedTouches[0].clientX;
+});
+
+secondForm.addEventListener('touchend', (e) => {
+  touchCoordsSecondForm.endingCoord = e.changedTouches[0].clientX;
+
+  const coordsDifference = calculateCoordsDiff(
+    touchCoordsSecondForm.startingCoord,
+    touchCoordsSecondForm.endingCoord
+  );
+
+  if (-coordsDifference > secondForm.clientWidth / 2)
+    secondForm.dispatchEvent(new Event('submit'));
+
+  if (coordsDifference > secondForm.clientWidth / 2)
+    backArrow.dispatchEvent(new Event('click'));
+});

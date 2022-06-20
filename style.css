@@ -10,6 +10,7 @@
   --main-clr: #fe001a;
   --text-clr: #222222;
   --gray-clr: #ded7c9;
+  --handle-position: 50%;
 }
 
 * {
@@ -64,6 +65,7 @@ input {
   padding: 0.65em 1em;
   border-radius: 10px;
   height: 50px;
+  background-color: white;
 }
 
 select {
@@ -116,6 +118,10 @@ footer {
   padding: 1.5em 3em;
   background-color: white;
   border-radius: 25px;
+}
+
+.modal h3 {
+  font-size: 1.5rem;
 }
 
 .modal button {
@@ -340,6 +346,9 @@ a[href='#why-us-section'] {
   background-color: #c0c0c0;
 }
 
+.apply-today--form {
+}
+
 .apply-today--form div {
   width: 100%;
   margin-bottom: 1.5em;
@@ -374,7 +383,7 @@ a[href='#why-us-section'] {
   content: '';
   display: block;
   height: 100%;
-  width: 50%;
+  width: var(--handle-position);
   background: var(--main-clr);
   border-radius: 10px;
   transition: 0.5s width ease-in-out;
@@ -616,6 +625,15 @@ a[href='#why-us-section'] {
 
   .heading--underline {
     margin: 1.25em 0 2.5em 0;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .modal button {
+    font-size: 1.25rem;
+    width: 100%;
   }
 
   /* HERO AREA */
