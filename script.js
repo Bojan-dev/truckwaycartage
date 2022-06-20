@@ -24,10 +24,6 @@ mainHeaderSpans.forEach((headerSpan) => {
 
 const mainIllustration = document.querySelector('.main--img');
 
-window.addEventListener('load', () => {
-  mainIllustration.style.transform = 'translateX(0)';
-});
-
 //FORM SUBMIT:
 const firstForm = document.getElementById('apply-today--form-first');
 const secondForm = document.getElementById('apply-today--form-second');
