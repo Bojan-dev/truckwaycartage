@@ -57,12 +57,16 @@ section {
   width: 100%;
 }
 
-select {
+select,
+input {
   outline: none;
   border: 1px solid var(--gray-clr);
   padding: 0.65em 1em;
   border-radius: 10px;
   height: 50px;
+}
+
+select {
   cursor: pointer;
 }
 
@@ -97,6 +101,45 @@ footer {
 
 .btn--anim:hover {
   transform: scale(1.05);
+}
+.overlay {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.modal {
+  padding: 1.5em 3em;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.modal button {
+  margin-top: 1.5em;
+  font-size: 1rem;
+  padding: 1.25em 4em;
+}
+
+.modal * {
+  display: hidden;
+}
+
+.loading {
+  animation: loadingAnim 2s infinite;
+  width: 2.5em;
+}
+
+@keyframes loadingAnim {
+  from {
+    transform: rotate(0%);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /**/
@@ -297,21 +340,26 @@ a[href='#why-us-section'] {
   background-color: #c0c0c0;
 }
 
-.apply-today--form {
-  gap: 1.5em;
-}
-
 .apply-today--form div {
   width: 100%;
+  margin-bottom: 1.5em;
 }
 
-.apply-today--form select {
+.apply-today--form select,
+.apply-today--form input {
   width: 75%;
   margin-top: 1em;
 }
 
 .apply-today--form select:hover {
   border: 1px solid hsl(40, 24%, 45%);
+}
+
+.form--error-p {
+  margin-top: 0.5em;
+  font-size: 0.825rem;
+  color: var(--main-clr);
+  display: none;
 }
 
 .apply-today--form-steps {
@@ -322,13 +370,31 @@ a[href='#why-us-section'] {
   margin: 2em 0;
 }
 
-.apply-today--form-steps::before {
+.apply-today--form-steps div {
   content: '';
   display: block;
   height: 100%;
   width: 50%;
   background: var(--main-clr);
   border-radius: 10px;
+  transition: 0.5s width ease-in-out;
+}
+
+.back-arrow {
+  position: absolute;
+  background-color: var(--main-clr);
+  width: 3.5em;
+  height: 3.5em;
+  transform: translateY(-150%);
+  /* border: 1px solid var(--main-clr); */
+}
+
+.back-arrow:hover {
+  background-color: hsl(354, 100%, 45%);
+}
+
+.back-arrow:disabled {
+  background-color: var(--gray-clr);
 }
 
 .apply-today--btn {
@@ -516,6 +582,11 @@ a[href='#why-us-section'] {
     align-items: center;
   }
 
+  .back-arrow {
+    position: relative;
+    transform: translateY(-50%);
+  }
+
   .apply-today--form select {
     width: 100%;
   }
@@ -567,4 +638,14 @@ a[href='#why-us-section'] {
     display: flex;
     flex-direction: column;
   }
+}
+
+/* VISIBILITY */
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
 }

@@ -10,6 +10,9 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <div class="overlay flex flex--center hidden">
+      <div class="modal text--center"></div>
+    </div>
     <header class="container">
       <nav class="flex flex--row-spacebetween">
         <img class="logo" src="imgs/logo.png" alt="Company Logo" />
@@ -115,9 +118,17 @@
         id="apply-today--container"
       >
         <div class="flex--row-equal-width">
+          <button disabled class="flex flex--center back-arrow">
+            <img src="imgs/arrow-back.svg" alt="Back arrow" />
+          </button>
           <h3>Apply today by filling out this form:</h3>
-          <div class="apply-today--form-steps"></div>
-          <form class="apply-today--form flex flex--column-start">
+          <div class="apply-today--form-steps">
+            <div></div>
+          </div>
+          <form
+            id="apply-today--form-first"
+            class="apply-today--form flex flex--column-start"
+          >
             <div>
               <label for="choose-age">Are you at least 25 years of age?</label>
               <select id="choose-age" type="text">
@@ -127,6 +138,9 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
+              <p class="form--error-p" id="choose-age-error">
+                Please, select one of the options
+              </p>
             </div>
             <div>
               <label for="choose-cdl">Do you have CDL licence?</label>
@@ -137,6 +151,9 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
+              <p class="form--error-p" id="choose-cdl-error">
+                Please, select one of the options
+              </p>
             </div>
             <div>
               <label for="choose-experience">Years of experiance:</label>
@@ -144,15 +161,59 @@
                 <option disabled selected value="">
                   Please, select an option bellow
                 </option>
-                <option value="">&lt;5 years</option>
-                <option value="No">5-10 years</option>
-                <option value="No">10-15 years</option>
-                <option value="No">15-20 years</option>
-                <option value="No">&gt;20 years</option>
+                <option value="<5 years">&lt;5 years</option>
+                <option value="5-10 years">5-10 years</option>
+                <option value="10-15 years">10-15 years</option>
+                <option value="15-20 years">15-20 years</option>
+                <option value=">20 years">&gt;20 years</option>
               </select>
+              <p class="form--error-p" id="choose-experience-error">
+                Please, select one of the options
+              </p>
             </div>
             <button class="bkg--red apply-today--btn btn--anim" type="submit">
               NEXT
+            </button>
+          </form>
+          <form
+            id="apply-today--form-second"
+            class="apply-today--form flex flex--column-start hidden"
+          >
+            <div>
+              <label for="enter-name">Your full name:</label>
+              <input
+                id="enter-name"
+                type="text"
+                placeholder="Enter your name"
+              />
+              <p class="form--error-p" id="enter-name-error">
+                Please, enter your full name
+              </p>
+            </div>
+            <div>
+              <label for="enter-number">Your phone number:</label>
+              <input
+                id="enter-number"
+                type="tel"
+                placeholder="Enter your number"
+              />
+              <p class="form--error-p" id="enter-number-error">
+                Please, enter your number
+              </p>
+            </div>
+            <div>
+              <label for="enter-email">Your email address:</label>
+              <input
+                id="enter-email"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <p class="form--error-p" id="enter-email-error">
+                Please, select one of the options
+              </p>
+            </div>
+            <button class="bkg--red apply-today--btn btn--anim" type="submit">
+              SUBMIT
             </button>
           </form>
         </div>
@@ -176,10 +237,10 @@
     </section>
     <footer>
       <div class="container flex flex--row-spacebetween">
-        <a href="#"
+        <a class="btn--anim" href="#"
           ><img src="imgs/logo.png" class="logo" alt="Company Logo"
         /></a>
-        <div class="flex flex--column-center footer--icon-wrapper">
+        <div class="flex flex--column-center footer--icon-wrapper btn--anim">
           <a href="tel:8889993851"
             ><img src="imgs/phone-icon.svg" alt="Phone icon"
           /></a>
@@ -187,7 +248,7 @@
             >888 999 3851</a
           >
         </div>
-        <div class="flex flex--column-center footer--icon-wrapper">
+        <div class="flex flex--column-center footer--icon-wrapper btn--anim">
           <a
             href="https://www.google.com/maps/search/80+Gilberts,+Elgin+IL+60206/@42.1040902,-88.3876678,14z/data=!3m1!4b1"
             target="_blank"
@@ -201,7 +262,7 @@
             >80 Gilberts, Elgin IL 60206</a
           >
         </div>
-        <div class="flex flex--column-center footer--icon-wrapper">
+        <div class="flex flex--column-center footer--icon-wrapper btn--anim">
           <a href="mailto:guerro@truckaway.com">
             <img src="imgs/email-icon.svg" alt="Email icon"
           /></a>
