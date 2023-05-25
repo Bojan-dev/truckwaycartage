@@ -11,11 +11,16 @@
   </head>
   <body>
     <div class="overlay flex flex--center hidden">
-      <div class="modal text--center"></div>
+      <div class="modal text--center">
+        <h3>Application is successfully submitted!</h3>
+        <button class="bkg--red btn--modal" type="button">Close</button>
+      </div>
     </div>
     <header class="container">
       <nav class="flex flex--row-spacebetween">
-        <img class="logo" src="imgs/logo.png" alt="Company Logo" />
+        <a href=""
+          ><img class="logo" src="imgs/logo.png" alt="Company Logo"
+        /></a>
         <div class="flex flex--column-center">
           <p class="nav--text">Talk to recruiter</p>
           <a
@@ -45,9 +50,10 @@
           <span class="text--red">family-friendly schedule</span>.
         </p>
         <img
-          class="main--img"
+          class="main--img main--img-translate transition--ease-in-out"
           src="imgs/hero-illustration.svg"
           alt="Dump truck illustration"
+          data-observe="main--img-translate"
         />
         <a href="#why-us-section"
           ><img src="imgs/arrow-down.svg" alt="Arrow down" />
@@ -61,11 +67,14 @@
     >
       <div class="container flex flex--column-center">
         <h2 id="why-us-title" class="text--white text--center">
-          Why truckaway?
+          Why truckway?
         </h2>
         <div class="heading--underline bkg--white"></div>
         <div class="flex flex--row-spacebetween width--100 why-us--gap">
-          <div class="flex flex--column-center flex--row-equal-width">
+          <div
+            class="flex flex--column-center flex--row-equal-width transition--ease-in-out why-translate why-card"
+            data-observe="why-translate"
+          >
             <div class="bkg--white img--wrapper flex flex--center">
               <img
                 id="why-us--first-ill"
@@ -79,7 +88,10 @@
               Our drivers are bringing home $30+ per hour at work
             </p>
           </div>
-          <div class="flex flex--column-center flex--row-equal-width">
+          <div
+            class="flex flex--column-center flex--row-equal-width transition--ease-in-out why-translate why-card"
+            data-observe="why-translate"
+          >
             <div class="bkg--white img--wrapper flex flex--center">
               <img
                 src="imgs/why-us-second-ill.svg"
@@ -92,7 +104,10 @@
               You will be home before your kids from school
             </p>
           </div>
-          <div class="flex flex--column-center flex--row-equal-width">
+          <div
+            class="flex flex--column-center flex--row-equal-width transition--ease-in-out why-translate why-card"
+            data-observe="why-translate"
+          >
             <div class="bkg--white img--wrapper flex flex--center">
               <img
                 src="imgs/why-us-third-ill.svg"
@@ -126,110 +141,102 @@
             <div></div>
           </div>
           <form
-            id="apply-today--form-first"
+            id="form"
             class="apply-today--form flex flex--column-start"
-            action="https://formsubmit.co/bojanvreco069@gmail.com"
+            action="https://formsubmit.co/carlos@truckwaycartage.com"
             method="POST"
           >
-            <div>
-              <label for="choose-age">Are you at least 25 years of age?</label>
-              <select id="choose-age" type="text" name="over-25" required>
-                <option disabled selected value="">
-                  Please, select an option bellow
-                </option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-              <p class="form--error-p" id="choose-age-error">
-                Please, select one of the options
-              </p>
+            <div class="first-form--wrapper">
+              <div>
+                <label for="choose-age"
+                  >Are you at least 25 years of age?</label
+                >
+                <select id="choose-age" type="text" name="age">
+                  <option disabled selected value="">
+                    Please, select an option bellow
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <p class="form--error-p" id="choose-age-error">
+                  Please, select one of the options
+                </p>
+              </div>
+              <div>
+                <label for="choose-cdl">Do you have CDL licence?</label>
+                <select id="choose-cdl" type="text" name="cdl">
+                  <option disabled selected value="">
+                    Please, select an option bellow
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <p class="form--error-p" id="choose-cdl-error">
+                  Please, select one of the options
+                </p>
+              </div>
+              <div>
+                <label for="choose-experience">Years of experiance:</label>
+                <select id="choose-experience" type="text" name="experience">
+                  <option disabled selected value="">
+                    Please, select an option bellow
+                  </option>
+                  <option value="<5 years">&lt;5 years</option>
+                  <option value="5-10 years">5-10 years</option>
+                  <option value="10-15 years">10-15 years</option>
+                  <option value="15-20 years">15-20 years</option>
+                  <option value=">20 years">&gt;20 years</option>
+                </select>
+                <p class="form--error-p" id="choose-experience-error">
+                  Please, select one of the options
+                </p>
+              </div>
+              <button class="bkg--red apply-today--btn btn--anim" type="button">
+                NEXT
+              </button>
             </div>
-            <div>
-              <label for="choose-cdl">Do you have CDL licence?</label>
-              <select id="choose-cdl" type="text" name="have-cdl" required>
-                <option disabled selected value="">
-                  Please, select an option bellow
-                </option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-              <p class="form--error-p" id="choose-cdl-error">
-                Please, select one of the options
-              </p>
+            <div class="second-form--wrapper hidden">
+              <div>
+                <label for="enter-name">Your full name:</label>
+                <input
+                  id="enter-name"
+                  type="text"
+                  placeholder="Enter your name"
+                  name="fullName"
+                  minlength="4"
+                />
+                <p class="form--error-p" id="enter-name-error">
+                  Please, enter your full name
+                </p>
+              </div>
+              <div>
+                <label for="enter-number">Your phone number:</label>
+                <input
+                  id="enter-number"
+                  type="tel"
+                  placeholder="Enter your number"
+                  name="phoneNumber"
+                />
+                <p class="form--error-p" id="enter-number-error">
+                  Please, enter your number
+                </p>
+              </div>
+              <div>
+                <label for="enter-email">Your email address:</label>
+                <input
+                  id="enter-email"
+                  type="email"
+                  placeholder="Enter your email"
+                  name="email"
+                />
+                <p class="form--error-p" id="enter-email-error">
+                  Please, select one of the options
+                </p>
+              </div>
+              <button class="bkg--red apply-today--btn btn--anim" type="submit">
+                SUBMIT
+              </button>
             </div>
-            <div>
-              <label for="choose-experience">Years of experiance:</label>
-              <select
-                id="choose-experience"
-                type="text"
-                name="experience"
-                required
-              >
-                <option disabled selected value="">
-                  Please, select an option bellow
-                </option>
-                <option value="<5 years">&lt;5 years</option>
-                <option value="5-10 years">5-10 years</option>
-                <option value="10-15 years">10-15 years</option>
-                <option value="15-20 years">15-20 years</option>
-                <option value=">20 years">&gt;20 years</option>
-              </select>
-              <p class="form--error-p" id="choose-experience-error">
-                Please, select one of the options
-              </p>
-            </div>
-            <button class="bkg--red apply-today--btn btn--anim" type="submit">
-              NEXT
-            </button>
-          </form>
-          <form
-            id="apply-today--form-second"
-            class="apply-today--form flex flex--column-start hidden"
-            action="https://formsubmit.co/bojanvreco069@gmail.com"
-            method="POST"
-          >
-            <div>
-              <label for="enter-name">Your full name:</label>
-              <input
-                id="enter-name"
-                type="text"
-                placeholder="Enter your name"
-                name="name"
-                required
-              />
-              <p class="form--error-p" id="enter-name-error">
-                Please, enter your full name
-              </p>
-            </div>
-            <div>
-              <label for="enter-number">Your phone number:</label>
-              <input
-                id="enter-number"
-                type="tel"
-                placeholder="Enter your number"
-                name="phone-number"
-                required
-              />
-              <p class="form--error-p" id="enter-number-error">
-                Please, enter your number
-              </p>
-            </div>
-            <div>
-              <label for="enter-email">Your email address:</label>
-              <input
-                id="enter-email"
-                type="email"
-                placeholder="Enter your email"
-                name="email-address"
-                required
-              />
-              <p class="form--error-p" id="enter-email-error">
-                Please, select one of the options
-              </p>
-            </div>
-            <button class="bkg--red apply-today--btn btn--anim" type="submit">
-              SUBMIT
-            </button>
           </form>
         </div>
         <div class="apply-today--separation-line"></div>
@@ -274,17 +281,17 @@
             href="https://www.google.com/maps/place/17N750+Galligan+Rd,+Gilberts,+IL+60136,+Sjedinjene+Ameri%C4%8Dke+Dr%C5%BEave/@42.1212509,-88.3778267,17z/data=!3m1!4b1!4m5!3m4!1s0x880f1113d84dfb5d:0xae96c0544ce9203a!8m2!3d42.1212469!4d-88.375638"
             class="text--white text--underline-none"
             target="_blank"
-            >17N750 Galligan Rd, Gilberts Il, 60136</a
+            >17N750 Galligan Rd, Gilberts, IL 60136</a
           >
         </div>
         <div class="flex flex--column-center footer--icon-wrapper btn--anim">
-          <a href="mailto:guero@truckwaycartage.com">
+          <a href="mailto:carlos@truckwaycartage.com">
             <img src="imgs/email-icon.svg" alt="Email icon"
           /></a>
           <a
-            href="mailto:guero@truckwaycartage.com"
+            href="mailto:carlos@truckwaycartage.com"
             class="text--white text--underline-none"
-            >guero@truckwaycartage.com</a
+            >carlos@truckwaycartage.com</a
           >
         </div>
       </div>
